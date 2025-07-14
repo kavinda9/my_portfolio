@@ -1,3 +1,4 @@
+/* Global Styles */
 :root {
   --primary-color: gold;
   --secondary-color: orange;
@@ -20,21 +21,18 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  padding-top: 70px;
+  padding-top: 70px; /* Offset for fixed navbar */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Navigation Bar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--nav-color);
   padding: 1rem 5%;
-  position: fixed;
   width: 100%;
+  position: fixed;
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -69,23 +67,24 @@ html {
   color: var(--nav-text);
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.nav-menu li a.active,
 .nav-menu li a:hover {
-  color: var(--primary-color);
-}
-
-.hamburger {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
   color: var(--nav-text);
-  cursor: pointer;
 }
 
+.nav-menu li a.active {
+  color: var(--nav-text);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.nav-menu li:last-child::after {
+  display: none;
+}
+
+/* Intro Section */
 .intro {
   min-height: 80vh;
   display: flex;
@@ -94,7 +93,8 @@ html {
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('office.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('office.jpg') center/cover no-repeat;
 }
 
 .profile-photo {
@@ -114,6 +114,225 @@ html {
 
 .intro h1 span {
   color: var(--secondary-color);
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.cv-button:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  padding: 5rem 10%;
+  gap: 3rem;
+  background-color: var(--card-bg);
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.about-text p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #444;
+}
+
+.tab {
+  padding: 0.8rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-light);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.tab.active {
+  color: var(--primary-color);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+/* Tab Contents */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.skill-item img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 0.8rem;
+  transition: transform 0.3s ease; /* Smooth scaling */
+  /* Remove any filters making it invisible */
+  filter: none;
+}
+
+.skill-item:hover img {
+  transform: scale(1.5); /* 150% enlargement */
+  /* Optional: Add glow effect */
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
+}
+
+.skill-item span {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Other Sections */
+.section {
+  padding: 5rem 10%;
+  min-height: 100vh;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-section {
+    flex-direction: column;
+    padding: 3rem 5%;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Will be replaced with hamburger menu */
+  }
+  
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .intro h1 {
+    font-size: 2rem;
+  }
+  
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .tabs {
+    flex-wrap: wrap;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  min-height: 100vh;
+  padding: 6rem 10%;
+}
+
+.about-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .button-group {
@@ -159,123 +378,6 @@ html {
   box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
 }
 
-.about-section {
-  padding: 5rem 10%;
-  background-color: var(--card-bg);
-}
-
-.about-container {
-  display: flex;
-  gap: 3rem;
-}
-
-.about-image {
-  flex: 1;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
-}
-
-.about-text p {
-  margin-bottom: 2rem;
-  color: var(--text-light);
-}
-
-.tabs {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #444;
-  flex-wrap: wrap;
-}
-
-.tab {
-  padding: 0.8rem 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--text-light);
-  position: relative;
-}
-
-.tab.active {
-  color: var(--primary-color);
-}
-
-.tab.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--primary-color);
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-  animation: fadeIn 0.5s ease;
-}
-
-/* --------- SKILLS --------- */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 1.5rem;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  transition: all 0.3s;
-}
-
-.skill-item img {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 0.8rem;
-  filter: none;
-  transition: transform 0.3s;
-}
-
-.skill-item:hover img {
-  transform: scale(1.5);
-  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
-}
-
-.skill-item span {
-  font-weight: 500;
-  color: var(--text-color);
-}
-
-.section {
-  padding: 5rem 10%;
-  min-height: 100vh;
-}
-
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -286,7 +388,7 @@ html {
   background-color: #1a1a1a;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   transition: transform 0.3s ease;
 }
 
@@ -339,6 +441,7 @@ html {
 
 .contact-info p {
   color: var(--text-light);
+  line-height: 1.6;
 }
 
 .social-icons {
@@ -350,7 +453,7 @@ html {
 .social-icons img {
   width: 40px;
   height: 40px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .social-icons img:hover {
@@ -379,6 +482,7 @@ html {
 }
 
 .contact-form label {
+  font-weight: 500;
   color: var(--text-light);
 }
 
@@ -390,7 +494,7 @@ html {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .contact-form button:hover {
@@ -406,83 +510,135 @@ footer {
   margin-top: 4rem;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+footer small {
+  font-size: 0.9rem;
+  color: var(--text-light);
 }
 
-@media (max-width: 992px) {
-  .about-container {
-    flex-direction: column;
-    padding: 3rem 5%;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+footer .social-links {
+  margin-top: 1rem;
 }
 
+footer .social-links a {
+  color: var(--text-light);
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Add this to your existing CSS */
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--nav-text);
+  cursor: pointer;
+}
+
+/* Mobile Navigation */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-    margin-left: auto;
   }
-
+  
   .nav-menu {
-    display: none;
-    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
     background-color: var(--nav-color);
-    margin-top: 1rem;
-    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    display: none;
   }
-
+  
   .nav-menu.active {
     display: flex;
   }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+  
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem 0;
   }
-}
-
-@media (max-width: 576px) {
-  .intro h1 {
-    font-size: 2rem;
+  
+  .nav-menu li::after {
+    display: none;
   }
-
-  .profile-photo {
-    width: 150px;
-    height: 150px;
+  
+  .nav-menu li a {
+    display: block;
+    padding: 0.8rem 0;
   }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tabs {
+  
+  /* About Section Image */
+  .about-container {
     flex-direction: column;
   }
-}
-
-/* Mobile Layout (Image and description side by side) */
-@media (max-width: 768px) {
-  .project-card {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 1.2rem;
-    align-items: start;
+  
+  .about-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
   }
-
+  
+  .about-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Projects Section */
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    grid-template-columns: 1fr 1.5fr;
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
   .project-card img {
-    height: 120px;
-    border-radius: 8px;
+    height: 100%;
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  .project-content {
+    padding: 0;
+  }
+  
+  /* Reduce spacing globally */
+  .section, .about-section {
+    padding: 3rem 5%;
+    min-height: auto;
+  }
+  
+  section {
+    padding: 4rem 5% !important;
+  }
+  
+  .intro {
+    padding: 4rem 2rem !important;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -493,31 +649,34 @@ footer {
   }
   
   .project-card img {
-    height: 180px;
+    max-height: 200px;
+    width: 100%;
   }
-}
-
-/* Make “About Me” image landscape and float it to the top on mobile */
-@media (max-width: 768px) {
-  .about-container {
-    display: flex;
+  
+  .contact-container {
     flex-direction: column;
+    gap: 2rem;
   }
-
-  /* move image above the text */
-  .about-image {
-    order: -1;
-    width: 100%;
-    margin-bottom: 1.5rem;
+  
+  /* Reduce font sizes */
+  .intro h1 {
+    font-size: 2rem;
   }
-
-  /* force a landscape crop and full-width display */
-  .about-image img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;        /* adjust this value to taste */
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
+  
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Tab adjustments */
+  .tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 0.5rem;
   }
 }
 
