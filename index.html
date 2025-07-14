@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#home" class="nav-brand">Kavinda Hasaranga</a>
+
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <ul class="nav-menu">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#about" onclick="showTab('education-tab')">Education</a></li>
+      <li><a href="#about" onclick="showTab('certificates')">Activities</a></li>
+      <li><a href="#about" onclick="showTab('experience')">Achievements</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="intro">
+    <img src="image01.jpg" alt="Profile Photo" class="profile-photo" />
+    <h1>Hello, I'm <span id="typed-text"></span></h1>
+    <div class="button-group">
+      <a href="#contact" class="btn hire-btn">Contact Me</a>
+      <a href="cv.pdf" class="btn download-btn" download>Download CV</a>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="image03.jpg" alt="Workspace" />
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I'm currently studying Software Engineering at the University of Sri Jayewardenepura (USJ). 
+          Although I'm still in the early stages of my academic journey and haven’t done many major projects yet, 
+          I’m really excited to keep learning and improving. I’ve always been interested in programming and technology, 
+          and I enjoy exploring new things and solving problems. I’m working on building up my skills through coursework, 
+          personal projects, and any hands on experience I can get. 
+          I'm especially looking forward to discovering which areas of software engineering 
+          I enjoy the most and using what I learn to build real, useful things.
+        </p>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="skills">Skills</button>
+          <button class="tab" data-tab="education-tab">Education</button>
+          <button class="tab" data-tab="certificates">Activities</button>
+          <button class="tab" data-tab="experience">Achievements</button>
+        </div>
+
+        <div class="tab-content active" id="skills-content">
+          <div class="skills-grid">
+            <div class="skill-item"><img src="html.png" alt="HTML" /><span>HTML</span></div>
+            <div class="skill-item"><img src="css.png" alt="CSS" /><span>CSS</span></div>
+            <div class="skill-item"><img src="js.png" alt="JS" /><span>JS</span></div>
+            <div class="skill-item"><img src="c++.png" alt="C++" /><span>C++</span></div>
+            <div class="skill-item"><img src="java.png" alt="Java" /><span>Java</span></div>
+            <div class="skill-item"><img src="python.png" alt="Python" /><span>Python</span></div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="education-tab-content">
+          <h3>Bachelor of Computing Honours in Software Engineering</h3>
+          <p>University of Sri Jayewardenepura <br>(2024–2028)</p>
+          <h3>Advanced Level (Mathematics)</h3>
+          <p>D.S. Senanayake College Colombo 07 <br>(2020–2023)</p>
+          <h3>Ordinary Level</h3>
+          <p>Piliyandala Central College <br>(2013–2019)</p>
+        </div>
+
+        <div class="tab-content" id="certificates-content">
+          <ul>
+            <li><strong>School Basketball Team Member</strong></li>
+            <li><strong>Intern – Bank of Ceylon</strong> – Customer service & financial docs</li>
+          </ul>
+        </div>
+
+        <div class="tab-content" id="experience-content">
+          <ul>
+            <li>Full-stack project using HTML/CSS/JS/PHP</li>
+            <li>University Hackathon – 24h prototype</li>
+            <li>Python course on Coursera</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <h2 style="text-align: center; margin-bottom: 2rem;">My Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="image02.png" alt="Pet Care" />
+        <div class="project-content">
+          <h3>Online Pet Care Service</h3>
+          <p>A web-based platform that allows pet parents to browse and purchase pet care products, 
+            earn reward points, and access exclusive discount coupons. 
+            Designed to offer a convenient and joyful shopping experience for pet lovers.
+          </p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="image04.jpg" alt="Event Calendar" />
+        <div class="project-content">
+          <h3>Department Events Calendar</h3>
+          <p>A web-based system designed to manage and display upcoming events, meetings, 
+            and important dates related to a specific department. It allows staff, faculty, 
+            and students to stay informed and organized by viewing, adding, 
+            and tracking departmental events in a centralized calendar interface.
+          </p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="image05.jpg" alt="Hotel Booking" />
+        <div class="project-content">
+          <h3>Online Hotel Booking System</h3>
+          <p>An online platform that allows users to search, view, and book hotel rooms based on availability, 
+            location, and preferences. The system provides real-time room availability, booking confirmation, 
+            customer registration, and payment integration. 
+            It aims to simplify the hotel reservation process for both customers and hotel administrators.
+          </p>
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 2rem;">
+      To view more, visit
+      <a href="https://github.com/kavinda9" target="_blank" style="color: var(--primary-color); text-decoration: underline;">GitHub</a>
+    </p>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Let's Connect</h2>
+        <p>
+          I'm actively looking for opportunities! Have questions or ideas? Reach out to me!
+        </p>
+        <div class="social-icons">
+          <a href="https://github.com/kavinda9" target="_blank"><img src="github.png" alt="GitHub" /></a>
+          <a href="https://www.linkedin.com/in/kavinda-hasaranga-1152b930a" target="_blank"><img src="linkedin.jpg" alt="LinkedIn" /></a>
+          <a href="https://wa.me/94767379371" target="_blank"><img src="whatsapp.png" alt="WhatsApp" /></a>
+          <a href="mailto:kavindahasaranga2003@gmail.com" target="_blank"><img src="gmail.png" alt="Gmail" /></a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form action="https://formspree.io/f/xanbwnrk" method="POST">
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-3 bg-dark text-white text-center">
+    <div class="container">
+      <small>&copy; 2025 Kavinda Hasaranga. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
