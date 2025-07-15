@@ -1,4 +1,3 @@
-/* Global Styles */
 :root {
   --primary-color: gold;
   --secondary-color: orange;
@@ -101,7 +100,7 @@ body {
   text-align: center;
   padding: 2rem;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('office.jpg') center/cover no-repeat;
+  url('office.jpg') center/cover no-repeat;
 }
 
 .profile-photo {
@@ -242,14 +241,12 @@ body {
   width: 70px;
   height: 70px;
   margin-bottom: 0.8rem;
-  transition: transform 0.3s ease; /* Smooth scaling */
-  /* Remove any filters making it invisible */
+  transition: transform 0.3s ease; 
   filter: none;
 }
 
 .skill-item:hover img {
-  transform: scale(1.5); /* 150% enlargement */
-  /* Optional: Add glow effect */
+  transform: scale(1.5); 
   filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.7));
 }
 
@@ -284,7 +281,7 @@ body {
 
 @media (max-width: 768px) {
   .nav-menu {
-    display: none; /* Will be replaced with hamburger menu */
+    display: none; 
   }
   
   .intro h1 {
@@ -537,17 +534,15 @@ footer .social-links a:hover {
   color: var(--primary-color);
 }
 
-/* Add this to your existing CSS */
-
 /* Hamburger Menu Styles */
 .hamburger {
-  display: none;             /* hidden on desktop */
+  display: none;             
   font-size: 1.8rem;
   color: var(--nav-text);
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1000;             /* above overlay */
+  z-index: 1000;            
   padding: 0.5rem;
 }
 
@@ -626,7 +621,7 @@ footer .social-links a:hover {
 
   .nav-overlay {
   position: fixed;
-  inset: 0;                  /* top/right/bottom/left: 0 */
+  inset: 0;                  
   background: var(--backdrop-color);
   opacity: 0;
   visibility: hidden;
@@ -639,7 +634,6 @@ footer .social-links a:hover {
   transition-delay: 0s;
 }
   
-  /* About Section Image */
   .about-container {
     flex-direction: column;
   }
@@ -647,7 +641,7 @@ footer .social-links a:hover {
   .about-image {
     width: 100%;
     height: 0;
-    padding-bottom: 75%; /* 4:3 Aspect Ratio */
+    padding-bottom: 75%; 
     position: relative;
     overflow: hidden;
   }
@@ -683,7 +677,6 @@ footer .social-links a:hover {
     padding: 0;
   }
   
-  /* Reduce spacing globally */
   .section, .about-section {
     padding: 3rem 5%;
     min-height: auto;
@@ -703,7 +696,6 @@ footer .social-links a:hover {
   }
 }
 
-/* Very small screens */
 @media (max-width: 480px) {
   .project-card {
     grid-template-columns: 1fr;
