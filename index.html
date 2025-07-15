@@ -10,108 +10,116 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <a href="#home" class="nav-brand">Kavinda Hasaranga</a>
-    
-    <!-- Hamburger Menu -->
-    <div class="hamburger">
-      <i class="fas fa-bars"></i>
+<nav class="navbar">
+  <a href="#home" class="nav-brand">Kavinda Hasaranga</a>
+  
+  <!-- Hamburger Menu -->
+  <div class="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+  
+  <ul class="nav-menu">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#about" onclick="showTab('education-tab')">Education</a></li>
+    <li><a href="#about" onclick="showTab('certificates')">Activities</a></li>
+    <li><a href="#about" onclick="showTab('experience')">Achievements</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="home" class="intro">
+  <img src="image01.jpg" alt="Profile Photo" class="profile-photo">
+  <h1>Hello, I'm <span id="typed-text"></span></h1>
+  <div class="button-group">
+  <a href="#contact" class="btn hire-btn">Contact Me</a>
+  <a href="cv.pdf" class="btn download-btn" download>Download CV</a>
+  </div>
+</section>
+
+<section id="about" class="about-section">
+<div class="about-container">
+
+  <div class="about-image">
+    <img src="image03.jpg" alt="Workspace">
+  </div>
+
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p>
+      I'm currently studying Software Engineering at the University of Sri Jayewardenepura (USJ). 
+      Although I'm still in the early stages of my
+      academic journey and haven’t done many major projects yet, I’m
+      really excited to keep learning and improving. I’ve always been
+      interested in programming and technology, and I enjoy exploring new
+      things and solving problems. I’m working on building up my skills
+      through coursework, personal projects, and any hands on experience
+      I can get. I'm especially looking forward to discovering which areas of
+      software engineering I enjoy the most and using what I learn to build
+      real, useful things.
+    </p>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="skills">Skills</button>
+      <button class="tab" data-tab="education-tab">Education</button>
+      <button class="tab" data-tab="certificates">Activities</button>
+      <button class="tab" data-tab="experience">Achievements</button>
     </div>
-    
-    <ul class="nav-menu">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#about" onclick="showTab('education-tab')">Education</a></li>
-      <li><a href="#about" onclick="showTab('certificates')">Activities</a></li>
-      <li><a href="#about" onclick="showTab('experience')">Achievements</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
 
-  <section id="home" class="intro">
-    <img src="image01.jpg" alt="Profile Photo" class="profile-photo">
-    <h1>Hello, I'm <span id="typed-text"></span></h1>
-    <div class="button-group">
-    <a href="#contact" class="btn hire-btn">Contact Me</a>
-    <a href="cv.pdf" class="btn download-btn" download>Download CV</a>
+  <div class="tab-content active" id="skills-content">
+    <div class="skills-grid">
+      <div class="skill-item">
+      <img src="html.png" alt="HTML">
+      <span>HTML</span>
     </div>
-  </section>
 
-  <section id="about" class="about-section">
-    <div class="about-container">
-      <!-- Left: Image -->
-      <div class="about-image">
-        <img src="image03.jpg" alt="Workspace">
-      </div>
+    <div class="skill-item">
+      <img src="css.png" alt="CSS">
+      <span>CSS</span>
+    </div>
 
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>
-          I'm currently studying Software Engineering at the University of Sri Jayewardenepura (USJ). Although I'm still in the early stages of my
-          academic journey and haven’t done many major projects yet, I’m
-          really excited to keep learning and improving. I’ve always been
-          interested in programming and technology, and I enjoy exploring new
-          things and solving problems. I’m working on building up my skills
-          through coursework, personal projects, and any hands on experience
-          I can get. I'm especially looking forward to discovering which areas of
-          software engineering I enjoy the most and using what I learn to build
-          real, useful things.
-        </p>
+    <div class="skill-item">
+        <img src="js.png" alt="JS">
+        <span>JS</span>
+    </div>
 
-        <div class="tabs">
-          <button class="tab active" data-tab="skills">Skills</button>
-          <button class="tab" data-tab="education-tab">Education</button>
-          <button class="tab" data-tab="certificates">Activities</button>
-          <button class="tab" data-tab="experience">Achievements</button>
-        </div>
+    <div class="skill-item">
+        <img src="c++.png" alt="C++">
+        <span>C++</span>
+    </div>
 
-        <div class="tab-content active" id="skills-content">
-          <div class="skills-grid">
-            <div class="skill-item">
-              <img src="html.png" alt="HTML">
-              <span>HTML</span>
-            </div>
-            <div class="skill-item">
-              <img src="css.png" alt="CSS">
-              <span>CSS</span>
-            </div>
-            <div class="skill-item">
-              <img src="js.png" alt="JS">
-              <span>JS</span>
-            </div>
-            <div class="skill-item">
-              <img src="c++.png" alt="C++">
-              <span>C++</span>
-            </div>
-            <div class="skill-item">
-              <img src="java.png" alt="Java">
-              <span>Java</span>
-            </div>
-            <div class="skill-item">
-              <img src="python.png" alt="Python">
-              <span>Pyton</span>
-            </div>
-            <!-- Other skill items same as before -->
-          </div>
-        </div>
+    <div class="skill-item">
+        <img src="java.png" alt="Java">
+        <span>Java</span>
+    </div>
 
-        <div class="tab-content" id="education-tab-content">
-          <h3>Bachelor of Computing Honours in Software Engineering</h3>
-          <p>University of Sri jayewardenepura <br>(2024-2028)</p>
+    <div class="skill-item">
+      <img src="python.png" alt="Python">
+      <span>Pyton</span>
+    </div>
+  </div>
+  </div>
 
-          <h3>Advanced Level (Mathematics)</h3>
-          <p>D.S. Senanayake College Colombo 07  <br>(2020-2023)</p>
+  <div class="tab-content" id="education-tab-content">
+    <h3>Bachelor of Computing Honours in Software Engineering</h3>
+    <p>University of Sri jayewardenepura <br>(2024-2028)</p>
 
-          <h3>Ordinary Level</h3>
-          <p>Piliyandala Central College  <br>(2013-2019)</p>
+    <h3>Advanced Level (Mathematics)</h3>
+    <p>D.S. Senanayake College Colombo 07  <br>(2020-2023)</p>
 
-        </div>
-        <div class="tab-content" id="certificates-content">
-          <ul>
-  <li><strong>School Basketball Team Member</strong> – Played as part of the school basketball team, developing teamwork, discipline, and leadership skills.</li>
-  <li><strong>Intern – Bank of Ceylon, Kesbewa Branch</strong> (Few Months) – Gained experience in banking operations, customer service, and handling financial documents.</li>
-</ul>
+    <h3>Ordinary Level</h3>
+    <p>Piliyandala Central College  <br>(2013-2019)</p>
+
+  </div>
+
+  <div class="tab-content" id="certificates-content">
+  <ul>
+  <li><strong>School Basketball Team Member</strong> – Played as part of the school basketball team, 
+    developing teamwork, discipline, and leadership skills.</li>
+  <li><strong>Intern – Bank of Ceylon, Kesbewa Branch</strong> (Few Months) – Gained experience in banking operations, 
+    customer service, and handling financial documents.</li>
+  </ul>
   </div>
   <div class="tab-content" id="experience-content">
   <ul>
@@ -120,8 +128,8 @@
     <li>Completed an online certification course in Python programming on Coursera.</li>
   </ul>
 
-        </div>
-      </div>
+    </div>
+    </div>
     </div>
   </section>
 
@@ -133,7 +141,9 @@
       <img src="image02.png" alt="Online Pet Care Service">
       <div class="project-content">
         <h3>Online Pet Care Service</h3>
-        <p>A web-based platform that allows pet parents to browse and purchase pet care products, earn reward points, and access exclusive discount coupons. Designed to offer a convenient and joyful shopping experience for pet lovers.</p>
+        <p>A web-based platform that allows pet parents to browse and purchase pet care products, 
+          earn reward points, and access exclusive discount coupons. 
+          Designed to offer a convenient and joyful shopping experience for pet lovers.</p>
       </div>
     </div>
 
@@ -141,7 +151,10 @@
       <img src="image04.jpg" alt="Department Events Calendar">
       <div class="project-content">
         <h3>Department Events Calendar</h3>
-        <p>A web-based system designed to manage and display upcoming events, meetings, and important dates related to a specific department. It allows staff, faculty, and students to stay informed and organized by viewing, adding, and tracking departmental events in a centralized calendar interface.</p>
+        <p>A web-based system designed to manage and display upcoming events, 
+          meetings, and important dates related to a specific department. It allows staff, faculty, 
+          and students to stay informed and organized by viewing, adding, and tracking departmental 
+          events in a centralized calendar interface.</p>
       </div>
     </div>
 
@@ -149,8 +162,10 @@
       <img src="image05.jpg" alt="Online Hotel Room Booking System">
       <div class="project-content">
         <h3>Online Hotel Room Booking System</h3>
-        <p>An online platform that allows users to search, view, and book hotel rooms based on availability, location, and preferences. The system provides real-time room availability, booking confirmation, customer registration, and payment integration. 
-       It aims to simplify the hotel reservation process for both customers and hotel administrators.</p>
+        <p>An online platform that allows users to search, view, and book hotel rooms based on availability, 
+          location, and preferences. The system provides real-time room availability, booking confirmation, 
+          customer registration, and payment integration. 
+          It aims to simplify the hotel reservation process for both customers and hotel administrators.</p>
       </div>
     </div>
   </div>
@@ -204,19 +219,20 @@
         <button type="submit">Send Message</button>
       </form>
     </div>
-
-  </div>
+ </div>
 </section>
-  <footer class="py-3 bg-dark text-white text-center">
-    <div class="container">
-      <small>&copy; 2025 Kavinda Hasaranga. All rights reserved.</small>
-    </div>
-  </footer>
 
-  <script src="script.js"></script>
+<footer class="py-3 bg-dark text-white text-center">
+  <div class="container">
+    <small>&copy; 2025 Kavinda Hasaranga. All rights reserved.</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
+
 
 
 
